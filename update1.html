@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 50%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<center>
+  <h1 style="color:blue;">Student Assignment Submission Portal</h1>
+</center>
+<body allign ="text-center">
+  <form method="POST" style="max-width:500px;margin:auto">
+
+  <div class="container text-center">
+      <h1 class="text-primary">Register</h1>
+    <table class="table table-borderless">
+      <form amethod="POST">
+        {% csrf_token %}
+        <div class="input-container" >
+          <div class="input-container">
+            Name<input placeholder="Name" class="form-control"  type="text" name="name" value="{{info.Name}}">
+          </div>
+          <br>
+
+          <div class="input-container">
+            Branch<input type="text" placeholder="Branch" name="Branch" class="form-control" value="{{info.Branch}}">
+          </div>
+          
+          <div class="input-container">
+            Rollno<input type="text" name="Rollno" value="{{info.Rollno}}" class="form-control">
+            Year<input type="text" name="Year" value="{{info.Year}}" class="form-control"><b
+          </div>
+        </div>
+        <div class="input-container">
+          <div class="input-field">
+            Email<input class="form-control" type="Email" name="Email" value="{{info.Email}}"><br>
+          </div>
+          <div class="input-container">
+            semester<input class="form-control" type="text" name="Semester" value="{{info.Semester}}"><br>
+          </div>
+        </div>
+        <div class="input-container">
+          <div class="input-container">
+            password<input class="input-field" type="password" name="password" value="{{info.password}}"><br>
+          </div>
+        </div>
+          <div class="input-container">
+            <input type="submit" class="btn btn-info text-center" value="Update">
+          </div>
+        </div>
+      </form>
+    </table>
+  </div>  
